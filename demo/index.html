@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-ZA">
+	<head>
+        <title>vSwitch demo</title>
+		<link href="../dist/css/vswitch.min.css" rel="stylesheet" type="text/css" />
+		<script src="../node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+		<script src="../dist/js/jquery.vswitch.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			(function ($) {
+				$(document).ready(function () {
+					var examples = [
+						{element: '.example1', code: "$('#one').vSwitch();"}
+					];
+
+					$.each(examples, function (i, val) {
+						eval(val.code);
+						$(val.element + ' code').html(val.code.replace(/\n/g, "<br/>"));
+					});
+				});
+			})(jQuery);
+		</script>
+		<style type="text/css">
+			body{
+				font-family: arial, helvetica, sans-serif;
+				font-size: 14px;
+			}
+
+			h2{
+				margin: 0;
+			}
+
+			code{
+				display: block;
+				padding: 10px;
+				margin: 5px 0;
+				background: #ddd;
+			}
+
+			label{
+				line-height: 30px;
+			}
+
+			.example{
+				margin-bottom: 50px;
+				padding: 10px;
+				border: 1px solid #ccc;
+			}
+
+			.clearfix:before,
+			.clearfix:after {
+				content: " ";
+				display: table;
+			}
+
+			.clearfix:after {
+				clear: both;
+			}
+
+			.clearfix {
+				*zoom: 1;
+			}
+
+			.example1 label{
+				float: left;
+				margin-right: 5px;
+			}
+
+			.example1 .vSwitch{
+				float: left;
+			}
+		</style>
+    </head>
+    <body>
+		<h1>vSwitch demo</h1>
+		<div class="example example1 clearfix">
+			<h2>Example1</h2>
+			<code></code>
+			<label>Do you like this plugin?</label>
+			<input type="checkbox" id="one"/>
+		</div>
+    </body>
+</html>

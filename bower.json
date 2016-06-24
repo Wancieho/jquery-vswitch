@@ -1,0 +1,16 @@
+{
+  "name": "jquery-vswitch",
+  "version": "0.0.1",
+  "main" : "source/jquery.vswitch.js",
+  "ignore": [
+    "demo",
+    "node_modules",
+    "source",
+    ".gitignore",
+    "readme.md",
+    "bower.json",
+    "gulpfile.js",
+    "package.json"
+  ],
+  "devDependencies": {}
+}
