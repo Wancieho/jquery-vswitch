@@ -3,13 +3,15 @@
 	<head>
         <title>vSwitch demo</title>
 		<link href="../dist/css/vswitch.min.css" rel="stylesheet" type="text/css" />
+		<link href="../dist/css/vswitch-blue.min.css" rel="stylesheet" type="text/css" />
 		<script src="../node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
 		<script src="../dist/js/jquery.vswitch.min.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			(function ($) {
 				$(document).ready(function () {
 					var examples = [
-						{element: '.example1', code: "$('#one').vSwitch();"}
+						{element: '.example1', code: "$('#one').vSwitch();"},
+						{element: '.example2', code: "$('#two').vSwitch({theme: 'blue'});"}
 					];
 
 					$.each(examples, function (i, val) {
@@ -40,12 +42,6 @@
 				line-height: 30px;
 			}
 
-			.example{
-				margin-bottom: 50px;
-				padding: 10px;
-				border: 1px solid #ccc;
-			}
-
 			.clearfix:before,
 			.clearfix:after {
 				content: " ";
@@ -60,12 +56,18 @@
 				*zoom: 1;
 			}
 
-			.example1 label{
+			.example{
+				margin-bottom: 50px;
+				padding: 10px;
+				border: 1px solid #ccc;
+			}
+
+			.example label{
 				float: left;
 				margin-right: 5px;
 			}
 
-			.example1 .vSwitch{
+			.example .vSwitch{
 				float: left;
 			}
 		</style>
@@ -73,10 +75,16 @@
     <body>
 		<h1>vSwitch demo</h1>
 		<div class="example example1 clearfix">
-			<h2>Example1</h2>
+			<h2>Example 1</h2>
 			<code></code>
-			<label>Do you like this plugin?</label>
+			<label>Default</label>
 			<input type="checkbox" id="one"/>
+		</div>
+		<div class="example example2 clearfix">
+			<h2>Example 2</h2>
+			<code></code>
+			<label>Themed and default checked</label>
+			<input type="checkbox" id="two" checked="checked"/>
 		</div>
     </body>
 </html>

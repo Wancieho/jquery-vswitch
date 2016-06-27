@@ -1,20 +1,22 @@
 .vSwitch .switch {
   position: relative;
-  padding: 2px;
-  width: 56px;
-  height: 26px;
+  width: 60px;
+  height: 30px;
   background: #999;
+  -webkit-border-radius: 99px;
+  -moz-border-radius: 99px;
   border-radius: 99px;
+  cursor: pointer;
 }
 .vSwitch .switch .button {
   position: absolute;
+  margin: 2px;
   left: 0;
   right: auto;
   width: 26px;
   height: 26px;
   background: #666;
   border-radius: 99px;
-  cursor: pointer;
 }
 .vSwitch .switch .button.on {
   left: auto;

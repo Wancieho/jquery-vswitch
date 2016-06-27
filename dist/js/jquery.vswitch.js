@@ -13,11 +13,11 @@
 
 	var pluginName = 'vSwitch';
 	var defaults = {
-		theme: 'blue'
+		theme: ''
 	};
 
-	function vSwitch(element, options) {
-		this.element = element;
+	function vSwitch(checkbox, options) {
+		this.checkbox = checkbox;
 		this.settings = $.extend({}, defaults, options);
 		this.isOn = false;
 
@@ -27,34 +27,48 @@
 	$.extend(vSwitch.prototype, {
 		privateMethodScopeAssignment: function () {
 			create.apply(this);
+			currentCheckboxState.apply(this);
 			events.apply(this);
 		}
 	});
 
 	function create() {
-		$(this.element).wrap('<div class="vSwitch">').parent().append('<div class="switch"><div class="button">');
+		$(this.checkbox).wrap('<div class="vSwitch">').parent().append('<div class="switch"><div class="button">');
 
 		if (this.settings.theme !== '') {
-			$(this.element).parent().addClass(this.settings.theme);
+			$(this.checkbox).parent().addClass(this.settings.theme);
 		}
 
-		$(this.element).hide();
+		$(this.checkbox).hide();
+	}
+
+	function currentCheckboxState() {
+		if ($(this.checkbox).prop('checked')) {
+			this.isOn = true;
+			$(this.checkbox).siblings().find('.button').addClass('on');
+		} else {
+			this.isOn = false;
+			$(this.checkbox).siblings().find('.button').removeClass('on');
+		}
 	}
 
 	function events() {
 		var scope = this;
 
-		$(this.element).siblings().find('.button').on('click', function () {
+		$(this.checkbox).siblings('.switch').on('click', function () {
 			onOff.apply(scope);
 		});
 	}
 
 	function onOff() {
-		if (this.isOn) {
+		$(this.checkbox).trigger('click');
 
+		if (this.isOn) {
+			this.isOn = false;
+			$(this.checkbox).siblings().find('.button').removeClass('on');
 		} else {
-			console.debug($(this.element));
-			$(this.element).siblings().find('.button').addClass('on');
+			this.isOn = true;
+			$(this.checkbox).siblings().find('.button').addClass('on');
 		}
 	}
 

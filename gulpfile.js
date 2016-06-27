@@ -18,6 +18,8 @@ var license = '/*\n' +
 gulp.task('default', [
 	'css-copy',
 	'css-minify',
+	'css-blue-copy',
+	'css-blue-minify',
 	'js-copy',
 	'js-minify'
 ]);
@@ -33,6 +35,20 @@ gulp.task('css-minify', function () {
 			.pipe(less())
 			.pipe(minify({compatibility: 'ie8'}))
 			.pipe(rename('vswitch.min.css'))
+			.pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('css-blue-copy', function () {
+	return gulp.src('source/css/vswitch-blue.less')
+			.pipe(less())
+			.pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('css-blue-minify', function () {
+	return gulp.src('source/css/vswitch-blue.less')
+			.pipe(less())
+			.pipe(minify({compatibility: 'ie8'}))
+			.pipe(rename('vswitch-blue.min.css'))
 			.pipe(gulp.dest('dist/css'));
 });
 
@@ -54,6 +70,8 @@ gulp.task('js-minify', function () {
 gulp.task('watch', function () {
 	gulp.watch('source/css/vswitch.less', ['css-copy']);
 	gulp.watch('source/css/vswitch.less', ['css-minify']);
+	gulp.watch('source/css/vswitch-blue.less', ['css-blue-copy']);
+	gulp.watch('source/css/vswitch-blue.less', ['css-blue-minify']);
 	gulp.watch('source/js/jquery.vswitch.js', ['js-copy']);
 	gulp.watch('source/js/jquery.vswitch.js', ['js-minify']);
 });
