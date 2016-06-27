@@ -19,7 +19,7 @@
 	function vSwitch(checkbox, options) {
 		this.checkbox = checkbox;
 		this.settings = $.extend({}, defaults, options);
-		this.isOn = false;
+		this.isOn = null;
 
 		this.privateMethodScopeAssignment();
 	}
@@ -43,12 +43,13 @@
 	}
 
 	function currentCheckboxState() {
+		console.debug($(this.checkbox).parent().addClass('on'));
 		if ($(this.checkbox).prop('checked')) {
 			this.isOn = true;
-			$(this.checkbox).siblings().find('.button').addClass('on');
+			$(this.checkbox).parent().addClass('on');
 		} else {
 			this.isOn = false;
-			$(this.checkbox).siblings().find('.button').removeClass('on');
+			$(this.checkbox).parent().removeClass('on');
 		}
 	}
 
@@ -60,20 +61,8 @@
 		});
 
 		$(this.checkbox).siblings('.switch').on('click', function () {
-			onOff.apply(scope);
+			$(scope.checkbox).trigger('click');
 		});
-	}
-
-	function onOff() {
-		$(this.checkbox).trigger('click');
-
-		if (this.isOn) {
-			this.isOn = false;
-			$(this.checkbox).siblings().find('.button').removeClass('on');
-		} else {
-			this.isOn = true;
-			$(this.checkbox).siblings().find('.button').addClass('on');
-		}
 	}
 
 	$.fn[pluginName] = function (options) {

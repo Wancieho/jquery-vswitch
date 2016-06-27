@@ -1,10 +1,11 @@
+@import "mixins.less";
+
 .vSwitch{
 	&.blue{
-		.switch{
-			background: #39f;
-
-			.button{
-				background: #06c;
+		&.on{
+			.switch{
+				background: #39f;
+				.transition(all, 0.3s, ease-out);
 			}
 		}
 	}
