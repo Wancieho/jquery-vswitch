@@ -10,8 +10,10 @@
 			(function ($) {
 				$(document).ready(function () {
 					var examples = [
-						{element: '.example1', code: "$('#one').vSwitch();"},
-						{element: '.example2', code: "$('#two').vSwitch({theme: 'blue'});"}
+						{element: '.example1', code: "$('.example1 input[type=\"checkbox\"]').vSwitch();"},
+						{element: '.example2', code: "$('.example2 input[type=\"checkbox\"]').vSwitch({theme: 'blue'});"},
+						{element: '.example3', code: "$('.example3 input[type=\"checkbox\"]').vSwitch({size: 'small'});"},
+						{element: '.example4', code: "$('.example4 input[type=\"checkbox\"]').vSwitch({size: 'large'});"}
 					];
 
 					$.each(examples, function (i, val) {
@@ -61,11 +63,24 @@
 			.example label{
 				float: left;
 				margin-right: 5px;
-				line-height: 26px;
+				line-height: 24px;
+				cursor: pointer;
 			}
 
 			.example .vSwitch{
 				float: left;
+			}
+
+			.example3 label{
+				line-height: 20px;
+			}
+
+			.example4 .vSwitch.on .switch{
+				background: goldenrod;
+			}
+
+			.example4 label{
+				line-height: 28px;
 			}
 		</style>
     </head>
@@ -80,8 +95,20 @@
 		<div class="example example2 clearfix">
 			<h2>Example 2</h2>
 			<code></code>
-			<label for="two">Themed and default checked</label>
+			<label for="two">Themed and checked</label>
 			<input type="checkbox" id="two" checked="checked"/>
+		</div>
+		<div class="example example3 clearfix">
+			<h2>Example 3</h2>
+			<code></code>
+			<label for="three">Small default</label>
+			<input type="checkbox" id="three"/>
+		</div>
+		<div class="example example4 clearfix">
+			<h2>Example 4</h2>
+			<code></code>
+			<label for="four">Large, checked and custom CSS</label>
+			<input type="checkbox" id="four" checked="checked"/>
 		</div>
     </body>
 </html>

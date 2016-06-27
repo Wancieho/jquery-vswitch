@@ -4,7 +4,8 @@
 
 	var pluginName = 'vSwitch';
 	var defaults = {
-		theme: ''
+		theme: '',
+		size: ''
 	};
 
 	function vSwitch(checkbox, options) {
@@ -28,8 +29,14 @@
 	function create() {
 		$(this.checkbox).wrap('<div class="vSwitch">').parent().append('<div class="switch"><div class="button">');
 
+		var wrapper = $(this.checkbox).parent();
+
 		if (this.settings.theme !== '') {
-			$(this.checkbox).parent().addClass(this.settings.theme);
+			wrapper.addClass(this.settings.theme);
+		}
+
+		if (this.settings.size !== '') {
+			$(this.checkbox).parent().addClass(this.settings.size);
 		}
 
 		$(this.checkbox).hide();

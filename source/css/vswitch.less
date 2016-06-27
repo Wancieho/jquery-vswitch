@@ -3,7 +3,7 @@
 .vSwitch{
 	.switch{
 		position: relative;
-		width: 44px;
+		width: 42px;
 		height: 24px;
 		background: #bbb;
 		cursor: pointer;
@@ -30,8 +30,52 @@
 			.transition(all, 0.3s, ease-out);
 
 			.button{
-				left: 20px;
+				left: 18px;
 				.transition(all, 0.3s, ease-out);
+			}
+		}
+	}
+
+	&.small{
+		.switch{
+			width: 34px;
+			height: 20px;
+			.borderRadius(10px);
+
+			.button{
+				width: 16px;
+				height: 16px;
+				.borderRadius(8px);
+			}
+		}
+
+		&.on{
+			.switch{
+				.button{
+					left: 14px;
+				}
+			}
+		}
+	}
+
+	&.large{
+		.switch{
+			width: 50px;
+			height: 28px;
+			.borderRadius(14px);
+
+			.button{
+				width: 24px;
+				height: 24px;
+				.borderRadius(12px);
+			}
+		}
+
+		&.on{
+			.switch{
+				.button{
+					left: 22px;
+				}
 			}
 		}
 	}
