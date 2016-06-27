@@ -55,6 +55,10 @@
 	function events() {
 		var scope = this;
 
+		$(this.checkbox).on('click', function () {
+			currentCheckboxState.apply(scope);
+		});
+
 		$(this.checkbox).siblings('.switch').on('click', function () {
 			onOff.apply(scope);
 		});
