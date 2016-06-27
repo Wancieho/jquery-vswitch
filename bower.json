@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "main" : "source/jquery.vswitch.js",
   "ignore": [
-    "demo",
     "node_modules",
     "source",
     ".gitignore",
