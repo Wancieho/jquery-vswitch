@@ -1,6 +1,6 @@
 {
   "name": "jquery-vswitch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main" : "source/jquery.vswitch.js",
   "ignore": [
     "node_modules",
