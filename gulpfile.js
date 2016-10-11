@@ -10,7 +10,7 @@ var license = '/*\n' +
 		' * Description: Checkbox switch jQuery plug-in\n' +
 		' * Author: https://github.com/Wancieho\n' +
 		' * License: MIT\n' +
-		' * Version: 0.0.2\n' +
+		' * Version: 0.0.3\n' +
 		' * Dependancies: jquery-1.*\n' +
 		' * Date: 24/06/2016\n' +
 		' */\n';

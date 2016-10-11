@@ -3,7 +3,7 @@
  * Description: Checkbox switch jQuery plug-in
  * Author: https://github.com/Wancieho
  * License: MIT
- * Version: 0.0.2
+ * Version: 0.0.3
  * Dependancies: jquery-1.*
  * Date: 24/06/2016
  */
