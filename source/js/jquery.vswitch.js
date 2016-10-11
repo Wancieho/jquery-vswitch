@@ -43,7 +43,6 @@
 	}
 
 	function currentCheckboxState() {
-		console.debug($(this.checkbox).parent().addClass('on'));
 		if ($(this.checkbox).prop('checked')) {
 			this.isOn = true;
 			$(this.checkbox).parent().addClass('on');
